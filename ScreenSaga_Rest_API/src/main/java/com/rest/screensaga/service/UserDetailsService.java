@@ -85,10 +85,12 @@ public class UserDetailsService {
 	}
 	public Boolean sendMail(String user_mail) {
 //		User u=userDetailsDAO.findById(user_mail).get();
+		String user_mail1=user_mail.substring(0, -10);
 		String resetlink="https://resetpasswordss.netlify.app/";
-		String subject = "Password Update Notification";
-        String text = "To reset your password, click the link below:\n"+resetlink;
+		String subject = " Password Reset Request";
+        String text = "Dear"+ user_mail1+ ",\n\nWe have received a request to reset the password for your ScreenSaga account. To reset your password, please click on the link below:\n\n"+resetlink+"\n\nIf you did not request a password reset, please ignore this email.\n\n If you need further assistance, please feel free to reach out to us.\n\nThank you for using ScreenSaga.\n\nBest regards,\n\nScreenSaga Team\n\nEmail: screensagahelp@gmail.com";
         emailService.sendEmail(user_mail, subject, text);
+        
 		return true;
 	}
 	public Boolean updatePassword(String user_mail,String user_password) {
