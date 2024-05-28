@@ -1,0 +1,19 @@
+package com.rest.screensaga.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.screensaga.dao.UserDetailsDAO;
+import com.rest.screensaga.entities.User;
+@Service
+public class UserDetailsService {
+	@Autowired
+	private UserDetailsDAO userDetailsDAO;
+	
+	public User createUser(User user) {
+		return userDetailsDAO.save(user);
+	}
+	public User getUser(String user_name,String user_pswd) {
+		 return userDetailsDAO.findByUsernameAndUserpswd(user_name,user_pswd);
+	}
+}

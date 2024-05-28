@@ -1,0 +1,5 @@
+package com.rest.screensaga.dao;
+
+public class UserDetailsDAO {
+
+}
