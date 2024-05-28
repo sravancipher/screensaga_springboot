@@ -20,7 +20,8 @@ public class UserDetailsService {
   private WatchlistDAO watchlistDAO;
   @Autowired 
   private ContactDAO contactDAO;
-  
+  @Autowired
+  private EmailService emailService;
   public Boolean createUser(User user) {
 	  List<User> users=userDetailsDAO.findAll();
 	  for(User u:users) {
@@ -30,6 +31,7 @@ public class UserDetailsService {
 		  }
 	  }
 	  userDetailsDAO.save(user);
+	  emailService.sendAccountCreationMail(user);
 	  return true;
   }
   

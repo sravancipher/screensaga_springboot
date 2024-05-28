@@ -29,9 +29,7 @@ public class UserDetailsController {
 	private EmailService emailService;
 	@PostMapping(value="/signup")
 	public Boolean createUser(@RequestBody User user) {
-		userDetailsService.createUser(user);
-		emailService.sendAccountCreationMail(user);
-		return true;
+		return userDetailsService.createUser(user);
 	}
 	@GetMapping(value="/login/{user_mail}/{user_pswd}")
 	public Boolean createUser(@PathVariable("user_mail") String user_mail,@PathVariable("user_pswd") String user_pswd) {
