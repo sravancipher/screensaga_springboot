@@ -1,0 +1,36 @@
+package com.rest.screensaga.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.screensaga.dao.UserDetailsDAO;
+import com.rest.screensaga.entities.User;
+@Service
+public class UserDetailsService {
+	@Autowired
+	private UserDetailsDAO userDetailsDAO;
+	
+	public Boolean createUser(User user) {
+		List<User> u=userDetailsDAO.findAll();
+		String email=user.getUser_mail();
+		for(User u1:u) {
+			String mail=u1.getUser_mail();
+			if(mail.equalsIgnoreCase(email)) {
+				return false;
+			}
+		}
+		userDetailsDAO.save(user);
+		return true;
+	}
+	public Boolean getUser(String user_mail,String user_pswd) {
+		 User user= userDetailsDAO.findById(user_mail).get();
+		 
+		 String pswd=user.getUser_pswd();
+		 if(pswd.equals(user_pswd)) {
+			 return true;
+		 }
+		 return false;
+	}
+}

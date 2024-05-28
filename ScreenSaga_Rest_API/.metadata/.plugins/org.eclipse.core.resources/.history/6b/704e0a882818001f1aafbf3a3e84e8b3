@@ -1,0 +1,5 @@
+package com.rest.screensaga.entities;
+
+public class User {
+
+}

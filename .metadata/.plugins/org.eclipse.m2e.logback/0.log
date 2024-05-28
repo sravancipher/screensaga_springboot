@@ -781,3 +781,13 @@
 2024-05-28 00:17:33,549 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-05-28 00:17:33,557 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
 2024-05-28 00:17:43,084 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-28 00:17:44,298 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-28 00:17:44,304 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
+2024-05-28 08:09:55,703 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-05-28 08:16:48,903 [Worker-14: Launching ScreenSaga_Rest_API - ScreenSagaRestApiApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-28 08:16:49,017 [Worker-14: Launching ScreenSaga_Rest_API - ScreenSagaRestApiApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-28 08:16:49,034 [Worker-14: Launching ScreenSaga_Rest_API - ScreenSagaRestApiApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
+2024-05-28 08:21:57,345 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-28 08:21:57,409 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-28 08:21:57,429 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
+2024-05-28 09:15:19,976 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes

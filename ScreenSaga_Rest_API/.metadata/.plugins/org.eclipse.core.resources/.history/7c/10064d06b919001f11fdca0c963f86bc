@@ -1,0 +1,59 @@
+package com.rest.screensaga.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.rest.screensaga.dao.UserDetailsDAO;
+import com.rest.screensaga.dao.WatchlistDAO;
+import com.rest.screensaga.entities.User;
+import com.rest.screensaga.entities.Watchlist;
+@Service
+public class UserDetailsService {
+	@Autowired
+	private UserDetailsDAO userDetailsDAO;
+	@Autowired
+	private WatchlistDAO watchlistDAO;
+	public Boolean createUser(User user) {
+		List<User> u=userDetailsDAO.findAll();
+		String email=user.getUser_mail();
+		for(User u1:u) {
+			System.out.println("u1");
+			String mail=u1.getUser_mail();
+			if(mail.equalsIgnoreCase(email)) {
+				return false;
+			}
+		}
+		userDetailsDAO.save(user);
+		return true;
+	}
+	public Watchlist addwatchlist(Watchlist watchlist) {
+		return watchlistDAO.save(watchlist);
+	}
+	public Boolean getUser(String user_mail,String user_pswd) {
+		List<User> u=userDetailsDAO.findAll();
+		for(User u1:u) {
+			System.out.println(u1);
+			String mail=u1.getUser_mail();
+			String pswd=u1.getUser_pswd();
+			if(mail.equalsIgnoreCase(user_mail)) {
+				if(pswd.equalsIgnoreCase(user_pswd))
+				return true;
+			}
+		}
+		 return false;
+	}
+	public Watchist getWatchList(String user_mail) {
+		List<User> u=watchlistDAO.findAll();
+		for(User u1:u) {
+			System.out.println(u1);
+			String mail=u1.getUser_mail();
+			
+			if(mail.equalsIgnoreCase(user_mail)) {
+				return u1;
+			}
+		}
+		 
+	}
+}

@@ -88,7 +88,9 @@ public class UserDetailsService {
 		String user_mail1=user_mail.substring(0, -10);
 		String resetlink="https://resetpasswordss.netlify.app/";
 		String subject = " Password Reset Request";
-        String text = "Dear"+ user_mail1+ ",\n\nWe have received a request to reset the password for your ScreenSaga account. To reset your password, please click on the link below:\n\n"+resetlink+"\n\nIf you did not request a password reset, please ignore this email.\n\n If you need further assistance, please feel free to reach out to us.\n\nThank you for using ScreenSaga.\n\nBest regards,\n\nScreenSaga Team\n\nEmail: screensagahelp@gmail.com";
+        String text = "Dear"+ user_mail1+ ",\n\nWe have received a request to reset the password for your ScreenSaga account. To reset your password, please click on the link below:\n\n"+resetlink+"\n\nIf you did not request a password reset, please ignore this email.\n\n If you need further assistance, please feel free to reach out to us.\n\nThank you for using ScreenSaga.\n\nBest regards,\n\nScreenSaga Team\n\nEmail: screensagahelp@gmail.com\n\nThis is an auto-generated email. Please do not reply directly to this message.\n\n"
+        		+ "\r\n"
+        		+ "";
         emailService.sendEmail(user_mail, subject, text);
         
 		return true;
