@@ -6,8 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rest.spring.dao.ContactDAO;
 import com.rest.spring.dao.UserDetailsDAO;
 import com.rest.spring.dao.WatchlistDAO;
+import com.rest.spring.entities.Contact;
 import com.rest.spring.entities.User;
 import com.rest.spring.entities.Watchlist;
 @Service
@@ -16,6 +18,8 @@ public class UserDetailsService {
   private UserDetailsDAO userDetailsDAO;
   @Autowired
   private WatchlistDAO watchlistDAO;
+  @Autowired 
+  private ContactDAO contactDAO;
   
   public Boolean createUser(User user) {
 	  List<User> users=userDetailsDAO.findAll();
@@ -89,4 +93,8 @@ public class UserDetailsService {
 	  
   }
   
+  public Boolean addComment(Contact comment) {
+	  contactDAO.save(comment);
+	  return true;
+  }
 }

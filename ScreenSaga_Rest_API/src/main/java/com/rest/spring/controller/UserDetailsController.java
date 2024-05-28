@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rest.spring.entities.Contact;
 import com.rest.spring.entities.User;
 import com.rest.spring.entities.Watchlist;
 import com.rest.spring.service.EmailService;
@@ -28,7 +29,9 @@ public class UserDetailsController {
 	private EmailService emailService;
 	@PostMapping(value="/signup")
 	public Boolean createUser(@RequestBody User user) {
-		return userDetailsService.createUser(user);
+		userDetailsService.createUser(user);
+		emailService.sendAccountCreationMail(user);
+		return true;
 	}
 	@GetMapping(value="/login/{user_mail}/{user_pswd}")
 	public Boolean createUser(@PathVariable("user_mail") String user_mail,@PathVariable("user_pswd") String user_pswd) {
@@ -55,5 +58,10 @@ public class UserDetailsController {
 	@PutMapping(value="/updatepassword/{user_mail}/{user_pswd}")
 	public Boolean updatePassword(@PathVariable("user_mail") String user_mail,@PathVariable("user_pswd") String user_pswd) {
 		return userDetailsService.updatePassword(user_mail,user_pswd);
+	}
+	
+	@PostMapping(value="/addcomment")
+	public Boolean addComment(@RequestBody Contact comment) {
+		return userDetailsService.addComment(comment);
 	}
 }
