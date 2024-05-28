@@ -19,7 +19,7 @@ import com.rest.screensaga.service.UserDetailsService;
 
 @RestController
 //@CrossOrigin(origins="http://localhost:3000/",methods = {RequestMethod.GET, RequestMethod.POST})
-@CrossOrigin(origins={"http://localhost:3000/","https://resetpasswordss.netlify.app/"})
+@CrossOrigin(origins={"https://screensaga.netlify.app/","https://resetpasswordss.netlify.app/"})
 
 @RequestMapping(value="/user")
 public class UserDetailsController {
