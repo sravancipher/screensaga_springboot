@@ -12,7 +12,7 @@ public class EmailService {
     private JavaMailSender emailSender;
 
     public Boolean sendPasswordResetEmail(String to) {
-    	String resetLink="http://localhost:3000";
+    	String resetLink="https://resetpasswordss.netlify.app/";
         SimpleMailMessage message = new SimpleMailMessage();
         String username=to.substring(0, to.lastIndexOf('@'));;
         message.setTo(to);
