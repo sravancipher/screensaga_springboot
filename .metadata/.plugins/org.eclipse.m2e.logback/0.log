@@ -946,3 +946,9 @@
 2024-05-28 20:34:12,652 [Worker-260: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-05-28 20:34:14,587 [Worker-260: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-05-28 20:34:14,836 [Worker-260: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
+2024-05-28 20:34:46,570 [Worker-264: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-05-28 20:34:48,638 [Worker-264: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-05-28 20:34:48,836 [Worker-264: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
+2024-05-29 00:15:25,235 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@7044efcc{STOPPING}[12.0.3,sto=0]
+2024-05-29 00:15:25,536 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@774209e4{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2024-05-29 08:29:56,043 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

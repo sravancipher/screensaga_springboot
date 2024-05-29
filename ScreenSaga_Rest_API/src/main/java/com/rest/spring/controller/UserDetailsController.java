@@ -19,7 +19,7 @@ import com.rest.spring.entities.Watchlist;
 import com.rest.spring.service.EmailService;
 import com.rest.spring.service.UserDetailsService;
 //@CrossOrigin(origins= {"http://localhost:8081/","http://localhost:3001/","http://localhost:3000"})
-@CrossOrigin(origins= {"http://localhost:8081/","https://resetpasswordss.netlify.app/","https://screensaga.netlify.app/"})
+@CrossOrigin(origins= {"http://localhost:3000/","https://resetpasswordss.netlify.app/","https://screensaga.netlify.app/"})
 @RestController
 @RequestMapping(value="/user")
 public class UserDetailsController {
