@@ -99,4 +99,28 @@ public class UserDetailsService {
 	  contactDAO.save(comment);
 	  return true;
   }
+  
+  public Boolean deleteaccount(String user_mail) {
+	  userDetailsDAO.deleteById(user_mail);
+	  try {
+		  List<Watchlist> watchlistdata=watchlistDAO.findAll();
+		  List<Contact> contactdata=contactDAO.findAll();
+		  for(Watchlist w:watchlistdata) {
+			  if(w.getUser_mail().equalsIgnoreCase(user_mail)) {
+				  watchlistDAO.delete(w);
+			  }
+		  }
+		  for(Contact c:contactdata) {
+			  if(c.getUsermail().equalsIgnoreCase(user_mail)) {
+				  contactDAO.delete(c);
+			  }
+		  }
+	  }
+	  catch(Exception e) {
+		  return true;
+	  }
+	  emailService.sendAccountDeletionMail(user_mail);
+	  return true;
+	  
+  }
 }

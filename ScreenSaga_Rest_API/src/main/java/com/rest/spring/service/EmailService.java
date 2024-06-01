@@ -36,4 +36,14 @@ public class EmailService {
         emailSender.send(message);
         return true;
     }
+    
+    public void sendAccountDeletionMail(String user_mail) {
+    	SimpleMailMessage message = new SimpleMailMessage();
+    	String username=user_mail.substring(0, user_mail.lastIndexOf('@'));
+    	message.setTo(user_mail);
+    	message.setSubject("Account Deletion Confirmation");
+    	String text="Dear "+username+",\n\nWe are writing to inform you that your ScreenSaga account has been successfully deleted as per your request. All your data associated with the account has been permanently removed from our system.\n\nIf you did not request this account deletion or if you have any concerns, please contact our support team immediately.\n\nThank you for being a part of the ScreenSaga community. We are sorry to see you go and hope to have the opportunity to serve you again in the future.\n\nBest regards,\n\nScreenSaga Team\n\nEmail: screensagahelp@gmail.com\n\nThis is an auto-generated email. Please do not reply directly to this message.";
+    	message.setText(text);
+    	emailSender.send(message);
+    }
 }

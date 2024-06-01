@@ -62,4 +62,8 @@ public class UserDetailsController {
 	public Boolean addComment(@RequestBody Contact comment) {
 		return userDetailsService.addComment(comment);
 	}
+	@DeleteMapping(value="/delete/{user_mail}")
+	public Boolean deleteaccount(@PathVariable("user_mail") String user_mail) {
+		return userDetailsService.deleteaccount(user_mail);
+	}
 }
