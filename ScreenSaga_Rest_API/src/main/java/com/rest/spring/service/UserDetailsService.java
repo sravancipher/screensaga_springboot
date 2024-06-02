@@ -109,6 +109,7 @@ public class UserDetailsService {
 	  try {
 		  List<Watchlist> watchlistdata=watchlistDAO.findAll();
 		  List<Contact> contactdata=contactDAO.findAll();
+		  List<Continue> continuedata=continueDAO.findAll();
 		  for(Watchlist w:watchlistdata) {
 			  if(w.getUser_mail().equalsIgnoreCase(user_mail)) {
 				  watchlistDAO.delete(w);
@@ -117,6 +118,11 @@ public class UserDetailsService {
 		  for(Contact c:contactdata) {
 			  if(c.getUsermail().equalsIgnoreCase(user_mail)) {
 				  contactDAO.delete(c);
+			  }
+		  }
+		  for(Continue c:continuedata) {
+			  if(c.getUser_mail().equalsIgnoreCase(user_mail)) {
+				  continueDAO.delete(c);
 			  }
 		  }
 	  }
