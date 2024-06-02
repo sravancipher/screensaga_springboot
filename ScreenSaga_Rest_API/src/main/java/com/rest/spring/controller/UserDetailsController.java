@@ -2,6 +2,7 @@ package com.rest.spring.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rest.spring.entities.Contact;
 import com.rest.spring.entities.User;
 import com.rest.spring.entities.Watchlist;
+import com.rest.spring.entities.Continue ;
 import com.rest.spring.service.EmailService;
 import com.rest.spring.service.UserDetailsService;
 //@CrossOrigin(origins= {"http://localhost:8081/","http://localhost:3001/","http://localhost:3000"})
@@ -65,5 +67,15 @@ public class UserDetailsController {
 	@DeleteMapping(value="/delete/{user_mail}")
 	public Boolean deleteaccount(@PathVariable("user_mail") String user_mail) {
 		return userDetailsService.deleteaccount(user_mail);
+	}
+	
+	@PostMapping(value="/addcontinuewatch")
+	public Boolean addcontinuewatchlist(@RequestBody Continue cont) {
+		return userDetailsService.addcontinuewatchlist(cont);
+	}	
+	
+	@GetMapping(value="getcontinuewatch/{user_mail}/{video_type}")
+	public Continue getcontinuewatch(@PathVariable("user_mail") String user_mail,@PathVariable("video_type") String video_type) {
+		return userDetailsService.getcontinuewatch(user_mail,video_type);
 	}
 }

@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rest.spring.dao.ContactDAO;
+import com.rest.spring.dao.ContinueDAO;
 import com.rest.spring.dao.UserDetailsDAO;
 import com.rest.spring.dao.WatchlistDAO;
 import com.rest.spring.entities.Contact;
+import com.rest.spring.entities.Continue;
 import com.rest.spring.entities.User;
 import com.rest.spring.entities.Watchlist;
 @Service
@@ -19,9 +21,11 @@ public class UserDetailsService {
   @Autowired
   private WatchlistDAO watchlistDAO;
   @Autowired 
-  private ContactDAO contactDAO;
+  private ContactDAO contactDAO;  
   @Autowired
   private EmailService emailService;
+  @Autowired 
+  private ContinueDAO continueDAO;
   public Boolean createUser(User user) {
 	  List<User> users=userDetailsDAO.findAll();
 	  for(User u:users) {
@@ -123,4 +127,46 @@ public class UserDetailsService {
 	  return true;
 	  
   }
+  
+  public Boolean addcontinuewatchlist(Continue cont) {
+	  List<Continue> continuelists=continueDAO.findAll();
+	  if(continuelists.size()>0) {
+		  for(Continue c:continuelists) {
+			  if(c.getUser_mail().equalsIgnoreCase(cont.getUser_mail())) {
+				  if(c.getVideo_type().equalsIgnoreCase(cont.getVideo_type())) {
+					  continueDAO.delete(c);
+					  continueDAO.save(cont);
+				  }
+				  else {
+//					  continueDAO.delete(c);
+					  continueDAO.save(cont);
+					  
+				  }  
+			  }else {
+				  continueDAO.save(cont);
+			  }
+			  
+			  
+		  }
+		  return true;
+	  }
+	  else {
+		  continueDAO.save(cont);
+		  return true;
+	  }
+	  
+  }
+  
+ public Continue getcontinuewatch(String user_mail,String video_type) {
+	 List<Continue> continuelists=continueDAO.findAll();
+	 if(continuelists.size()>0) {
+		 for(Continue c:continuelists) {
+			 if(c.getVideo_type().equalsIgnoreCase(video_type) && c.getUser_mail().equalsIgnoreCase(user_mail) ) {
+				 return c;
+			 }
+		 }
+
+	 }
+	 return null;
+	  }
 }
