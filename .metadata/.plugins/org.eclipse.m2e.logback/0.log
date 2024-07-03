@@ -1119,3 +1119,5 @@
 2024-07-03 19:11:12,543 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2024-07-03 19:11:12,550 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
 2024-07-03 19:13:01,779 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-07-03 19:13:01,824 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-07-03 19:13:01,828 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\SRAVAN\eclipse-workspace\ScreenSaga_DB\ScreenSaga_Rest_API\src\test\resources
